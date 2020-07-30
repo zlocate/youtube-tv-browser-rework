@@ -1,10 +1,10 @@
-const config = {
-  userAgent: 'Mozilla/5.0 (SMART-TV; Linux; Tizen 5.0) AppleWebKit/538.1 (KHTML, like Gecko) Version/5.0 NativeTVAds Safari/538.1'
-}
+
+const fakeUserAgent = 'Mozilla/5.0 (PS4; Leanback Shell) Gecko/20100101 Firefox/65.0 LeanbackShell/01.00.01.75 Sony PS4/ (PS4, , no, CH)'
 
 function changeUserAgent (request) {
   for (let header of request.requestHeaders) {
-    if (header.name.toLowerCase() === "user-agent") header.value = config.userAgent
+    if (header.name.toLowerCase() === "user-agent") header.value = fakeUserAgent
+
   }
 
   return { requestHeaders: request.requestHeaders }
